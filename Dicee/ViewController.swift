@@ -20,10 +20,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+        // Update Dice Images Randomly
+        updateDiceImages()
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
+        // Update Dice Images Randomly
+        updateDiceImages()
+    }
+    
+    // When motion event has ended, this method will be executed
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        // Update Dice Images Randomly
+        updateDiceImages()
+    }
+    
+    func updateDiceImages(){
         
         randomDiceIndex1 = Int.random(in: 0 ... 5)
         randomDiceIndex2 = Int.random(in: 0 ... 5)
